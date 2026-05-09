@@ -48,6 +48,12 @@ I'm an IT professional, cybersecurity enthusiast, and content creator with a pas
 ## 🌐 Links
 
 - 📚 Knowledge Base — [kb.worldofhackers.io](https://kb.worldofhackers.io)
+- 🎵 Zyntherix Music — [zyntherixmusic.com](https://zyntherixmusic.com)
+- 🎙️ DarkHours FM — [darkhoursfm.com](https://darkhoursfm.com)
+- 🔗 Scavvy Link Shortener — [go.scavenger.pro](https://go.scavenger.pro)
+- 💬 The Quote Codex — [wisdom.scavenger.pro](https://wisdom.scavenger.pro)
+- 📖 The Scavenger Stories — [stories.scavenger.pro](https://stories.scavenger.pro)
+- 👤 About Me — [about.scavenger.pro](https://about.scavenger.pro)
 
 ---
 
