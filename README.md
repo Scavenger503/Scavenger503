@@ -1,16 +1,54 @@
-## Hi there 👋
+# Hey, I'm Scavenger 👋
 
-<!--
-**Scavenger503/Scavenger503** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+I'm an IT professional, cybersecurity enthusiast, and content creator with a passion for self-hosted infrastructure, security automation, and building things that actually work in production. When I'm not breaking and fixing my homelab, I'm streaming, making music, or chasing the next certification.
 
-Here are some ideas to get you started:
+---
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+## 🛠️ What I Do
+
+- 🔐 **Cybersecurity & SIEM** — Deploying and managing Wazuh across multi-node environments, building automated alerting pipelines
+- 🐳 **DevOps & Infrastructure** — Self-hosted production-grade Docker stacks, Portainer, Cloudflare Tunnel & Zero Trust
+- ☸️ **Kubernetes** — Building out K3s clusters for hands-on container orchestration experience
+- 🤖 **Automation** — N8N workflow automation integrated with security tools, APIs, and notification channels
+- 🌐 **Networking & DNS** — Redundant AdGuard Home DNS resolvers, Zero Trust network access, no open inbound ports
+
+---
+
+## 🧰 Tech Stack
+
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
+![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat&logo=linux&logoColor=black)
+![Cloudflare](https://img.shields.io/badge/Cloudflare-F38020?style=flat&logo=cloudflare&logoColor=white)
+![Wazuh](https://img.shields.io/badge/Wazuh-SIEM-blue?style=flat)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
+![N8N](https://img.shields.io/badge/N8N-Automation-orange?style=flat)
+![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=flat&logo=kubernetes&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=flat&logo=git&logoColor=white)
+![Portainer](https://img.shields.io/badge/Portainer-13BEF9?style=flat&logo=portainer&logoColor=white)
+
+---
+
+## 📂 Featured Projects
+
+| Project | Description | Status |
+|---------|-------------|--------|
+| [HomeLab](https://github.com/Scavenger503/HomeLab) | Production Docker stacks powering a multi-node self-hosted homelab | ✅ Active |
+| [wazuh-n8n-security-pipeline](https://github.com/Scavenger503/wazuh-n8n-security-pipeline) | Automated SIEM alerting pipeline — Wazuh → N8N → Telegram/Twilio | 🔧 In Progress |
+
+---
+
+## 📚 Currently Working On
+
+- 🔧 Resolving Wazuh → N8N webhook integration
+- ☸️ Building out a K3s cluster for Kubernetes hands-on practice
+- 📜 Pursuing Terraform Associate (004) certification
+
+---
+
+## 🌐 Links
+
+- 📚 Knowledge Base — [kb.worldofhackers.io](https://kb.worldofhackers.io)
+
+---
+
+*Building in public. Breaking things on purpose.*
