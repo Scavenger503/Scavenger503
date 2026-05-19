@@ -33,7 +33,7 @@ I'm an IT professional, cybersecurity enthusiast, and content creator with a pas
 | Project | Description | Status |
 |---------|-------------|--------|
 | [HomeLab](https://github.com/Scavenger503/HomeLab) | Production Docker stacks powering a multi-node self-hosted homelab | ✅ Active |
-| [wazuh-n8n-security-pipeline](https://github.com/Scavenger503/HomeLab/tree/main/Phase-2) | Automated SIEM alerting pipeline — Wazuh → N8N → Telegram/Twilio | 🔧 In Progress |
+| [wazuh-n8n-security-pipeline](https://github.com/Scavenger503/HomeLab/tree/main/Phase-2) | Automated SIEM alerting pipeline — Wazuh → N8N → Telegram/Ntfy | ✅ Active |
 
 ---
 
