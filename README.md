@@ -1,59 +1,102 @@
 # Hey, I'm Scavenger 👋
 
-I'm an IT professional, cybersecurity enthusiast, and content creator with a passion for self-hosted infrastructure, security automation, and building things that actually work in production. When I'm not breaking and fixing my homelab, I'm streaming, making music, or chasing the next certification.
+Infrastructure engineer, self-hosting enthusiast, and perpetual homelab builder. I design and operate production-grade infrastructure, build security automation pipelines, and document everything I break and fix along the way.
 
 ---
 
-## 🛠️ What I Do
+## 🖥️ What I Run
 
-- 🔐 **Cybersecurity & SIEM** — Deploying and managing Wazuh across multi-node environments, building automated alerting pipelines
-- 🐳 **DevOps & Infrastructure** — Self-hosted production-grade Docker stacks, Portainer, Cloudflare Tunnel & Zero Trust
-- ☸️ **Kubernetes** — Building out K3s clusters for hands-on container orchestration experience
-- 🤖 **Automation** — N8N workflow automation integrated with security tools, APIs, and notification channels
-- 🌐 **Networking & DNS** — Redundant AdGuard Home DNS resolvers, Zero Trust network access, no open inbound ports
+A multi-node homelab running 80+ self-hosted services across dedicated physical machines, a Synology NAS with vDSM, and a Raspberry Pi — all managed as a unified environment.
 
----
+| Machine | Role |
+|---|---|
+| Lenovo M710q | Primary Docker host — Ghost, N8N, Linkwarden, Mattermost, and more |
+| Lenovo M715q | Security & DevOps — Wazuh SIEM, agent monitoring |
+| Synology DS923+ | NAS — backups, storage, Jellyfin |
+| vDSM (on DS923+) | Monitoring stack — Uptime Kuma, Ntopng, VoidWatch Bot |
+| Raspberry Pi | DNS & DHCP — AdGuard Home |
+| Proxmox Node | Virtualization testing |
+| Fedora 43 KDE | Daily driver |
 
-## 🧰 Tech Stack
-
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
-![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat&logo=linux&logoColor=black)
-![Cloudflare](https://img.shields.io/badge/Cloudflare-F38020?style=flat&logo=cloudflare&logoColor=white)
-![Wazuh](https://img.shields.io/badge/Wazuh-SIEM-blue?style=flat)
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
-![N8N](https://img.shields.io/badge/N8N-Automation-orange?style=flat)
-![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=flat&logo=kubernetes&logoColor=white)
-![Git](https://img.shields.io/badge/Git-F05032?style=flat&logo=git&logoColor=white)
-![Portainer](https://img.shields.io/badge/Portainer-13BEF9?style=flat&logo=portainer&logoColor=white)
+All external access via Cloudflare Tunnels — zero open inbound ports.
 
 ---
 
-## 📂 Featured Projects
+## 🚀 Featured Projects
 
 | Project | Description | Status |
-|---------|-------------|--------|
+|---|---|---|
 | [HomeLab](https://github.com/Scavenger503/HomeLab) | Production Docker stacks powering a multi-node self-hosted homelab | ✅ Active |
-| [wazuh-n8n-security-pipeline](https://github.com/Scavenger503/HomeLab/tree/main/Phase-2) | Automated SIEM alerting pipeline — Wazuh → N8N → Telegram/Ntfy | ✅ Active |
+| [wazuh-n8n-security-pipeline](https://github.com/Scavenger503/HomeLab/tree/main/Phase-2) | Automated SIEM alerting — Wazuh → N8N → Claude AI → Telegram | ✅ Live |
+| ntopng-n8n-security-pipeline | Network threat detection — Ntopng → N8N → Luna AI → Telegram | ✅ Live |
 
 ---
 
-## 📚 Currently Working On
+## 🤖 Luna AI — Security Intelligence Layer
 
-- 🔧 Resolving Wazuh → N8N webhook integration
-- ☸️ Building out a K3s cluster for Kubernetes hands-on practice
-- 📜 Pursuing Terraform Associate (004) certification
+Luna is my AI-powered security analyst running inside N8N. She receives raw alerts from Wazuh (SIEM) and Ntopng (network traffic monitor), analyzes them in real time, and delivers plain-English SOC-style triage reports directly to Telegram — including threat assessment, context, and recommended actions.
+
+**Pipeline:**
+```
+Wazuh SIEM ──────┐
+                  ├──▶ N8N Webhook ──▶ Luna (Claude API) ──▶ Telegram
+Ntopng Alerts ───┘
+```
+
+**What Luna does:**
+- Receives security alerts from two independent monitoring sources
+- Enriches each alert with AI-powered triage analysis
+- Delivers structured SOC-style reports including severity, confidence, and recommended actions
+- Operates 24/7 autonomously — catching real production events overnight without intervention
+
+---
+
+## 🛡️ Security Stack
+
+- **Wazuh SIEM** — log aggregation, threat detection, file integrity monitoring across all nodes
+- **Ntopng** — real-time network flow analysis with active threat intelligence feeds (Abuse.ch, Emerging Threats, IPsum)
+- **VoidWatch Bot** — Telegram bot for Ntopng network alerts
+- **Luna AI** — Claude-powered alert triage and SOC analysis
+- **AdGuard Home** — DNS-level filtering across the entire network
+- **Cloudflare WAF** — edge protection for all public-facing services
+- **Uptime Kuma** — service availability monitoring with instant alerting
+
+---
+
+## 🎯 Currently Working On
+
+- ☸️ K3s cluster deployment for hands-on Kubernetes practice
+- 📜 Terraform Associate (004) certification
+- ☁️ AWS Cloud Practitioner certification
+- 🔒 Expanding Luna AI capabilities across additional alert sources
+- 📦 Immich migration to vDSM for self-hosted family photo management
+
+---
+
+## 📜 Certifications in Progress
+
+- HashiCorp Terraform Associate
+- Certified Kubernetes Administrator (CKA)
+- GitHub Actions
+- AWS Cloud Practitioner
 
 ---
 
 ## 🌐 Links
 
-- 📚 Knowledge Base — [kb.worldofhackers.io](https://kb.worldofhackers.io)
+- 🌍 World of Hackers — [worldofhackers.io](https://worldofhackers.io)
 - 🎵 Zyntherix Music — [zyntherixmusic.com](https://zyntherixmusic.com)
 - 🎙️ DarkHours FM — [darkhoursfm.com](https://darkhoursfm.com)
 - 🔗 Scavvy Link Shortener — [go.scavenger.pro](https://go.scavenger.pro)
 - 💬 The Quote Codex — [wisdom.scavenger.pro](https://wisdom.scavenger.pro)
-- 📖 The Scavenger Stories — [stories.scavenger.pro](https://stories.scavenger.pro)
+- 📖 Scavenger Stories — [stories.scavenger.pro](https://stories.scavenger.pro)
 - 👤 About Me — [about.scavenger.pro](https://about.scavenger.pro)
+
+---
+
+## 🧰 Tech Stack
+
+`Docker` `Portainer` `Cloudflare` `Wazuh` `N8N` `Ntopng` `AdGuard Home` `Synology DSM` `Proxmox` `Ghost CMS` `Fedora Linux` `Bash` `YAML` `Git` `Terraform` `Kubernetes`
 
 ---
 
