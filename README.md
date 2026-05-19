@@ -28,7 +28,7 @@ All external access via Cloudflare Tunnels — zero open inbound ports.
 |---|---|---|
 | [HomeLab](https://github.com/Scavenger503/HomeLab) | Production Docker stacks powering a multi-node self-hosted homelab | ✅ Active |
 | [wazuh-n8n-security-pipeline](https://github.com/Scavenger503/HomeLab/tree/main/Phase-2) | Automated SIEM alerting — Wazuh → N8N → Claude AI → Telegram | ✅ Live |
-| ntopng-n8n-security-pipeline | Network threat detection — Ntopng → N8N → Luna AI → Telegram | ✅ Live |
+| [ntopng-n8n-security-pipeline](https://github.com/Scavenger503/HomeLab/tree/main/NTOPNG-Alerts) | Network threat detection — Ntopng → N8N → Luna AI → Telegram | ✅ Live |
 
 ---
 
