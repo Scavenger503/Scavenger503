@@ -48,6 +48,7 @@ Ntopng Alerts ───┘
 - Enriches each alert with AI-powered triage analysis
 - Delivers structured SOC-style reports including severity, confidence, and recommended actions
 - Operates 24/7 autonomously — catching real production events overnight without intervention
+- Escalates critical alerts (score ≥ 50 or blacklisted IPs) via Ntfy push notification — bypasses Do Not Disturb for urgent threats
 
 ---
 
