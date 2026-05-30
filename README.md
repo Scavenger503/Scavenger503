@@ -10,11 +10,12 @@ A multi-node homelab running 80+ self-hosted services across dedicated physical 
 
 | Machine | Role |
 |---|---|
-| Lenovo M710q | Primary Docker host — Ghost, N8N, Linkwarden, Mattermost, and more |
-| Lenovo M715q | Security & DevOps — Wazuh SIEM, agent monitoring |
-| Synology DS923+ | NAS — backups, storage, Jellyfin |
+| Lenovo M710q | Primary Docker host — Ghost, N8N, Linkwarden, and more |
+| Lenovo M715q (DevOps) | Security & DevOps — Wazuh SIEM, agent monitoring |
+| Lenovo M715q (K3s) | Dedicated K3s cluster node — Kubernetes workloads |
+| Synology DS923+ | NAS — backups, storage, vDSM |
 | vDSM (on DS923+) | Monitoring stack — Uptime Kuma, Ntopng, VoidWatch Bot |
-| Raspberry Pi | DNS & DHCP — AdGuard Home |
+| Raspberry Pi | DNS & DHCP — AdGuard Home (dual instance) |
 | Proxmox Node | Virtualization testing |
 | Fedora 43 KDE | Daily driver |
 
@@ -26,9 +27,36 @@ All external access via Cloudflare Tunnels — zero open inbound ports.
 
 | Project | Description | Status |
 |---|---|---|
-| [HomeLab](https://github.com/Scavenger503/HomeLab) | Production Docker stacks powering a multi-node self-hosted homelab | ✅ Active |
-| [wazuh-n8n-security-pipeline](https://github.com/Scavenger503/HomeLab/tree/main/Phase-2) | Automated SIEM alerting — Wazuh → N8N → Claude AI → Telegram | ✅ Live |
-| [ntopng-n8n-security-pipeline](https://github.com/Scavenger503/HomeLab/tree/main/NTOPNG-Alerts) | Network threat detection — Ntopng → N8N → Luna AI → Telegram | ✅ Live |
+| [HomeLab](https://github.com/Scavenger503/HomeLab) | Production infrastructure across Docker, Kubernetes, and Proxmox | ✅ Active |
+| [K3s Cluster](https://github.com/Scavenger503/HomeLab/tree/main/K3s) | GitOps-managed Kubernetes cluster with Prometheus/Grafana monitoring | ✅ Live |
+| [Wazuh AI Security Pipeline](https://github.com/Scavenger503/HomeLab/tree/main/Phase-2) | Automated SIEM alerting — Wazuh → N8N → Luna AI → Telegram | ✅ Live |
+| [NTOPNG-Alerts](https://github.com/Scavenger503/NTOPNG-Alerts) | Network threat detection — Ntopng → N8N → Luna AI → Telegram | ✅ Live |
+
+---
+
+## ☸️ K3s Kubernetes Cluster
+
+A production K3s cluster running on dedicated hardware, fully managed via GitOps using ArgoCD. All workloads are defined as Kubernetes manifests stored in GitHub — changes auto-sync to the cluster.
+
+**Live public access:**
+- 🏠 [k3s-homepage.scavenger.pro](https://k3s-homepage.scavenger.pro) — Cluster dashboard
+- 📊 [k3s-grafana.scavenger.pro](https://k3s-grafana.scavenger.pro) — Prometheus/Grafana monitoring (anonymous viewer)
+- 🔀 [ArgoCD](https://github.com/Scavenger503/HomeLab/blob/main/K3s/K3s%20argocd.md) — GitOps pipeline (documented on GitHub)
+
+**Stack:**
+```
+GitHub (source of truth)
+    │
+    ▼
+ArgoCD (GitOps controller)
+    ├── Homepage
+    ├── Prometheus + Grafana
+    └── Traefik ingress
+
+Cloudflare Tunnel → Traefik → Kubernetes pods
+```
+
+**Documentation:** [K3s Setup Guides](https://github.com/Scavenger503/HomeLab/tree/main/K3s)
 
 ---
 
@@ -48,7 +76,7 @@ Ntopng Alerts ───┘
 - Enriches each alert with AI-powered triage analysis
 - Delivers structured SOC-style reports including severity, confidence, and recommended actions
 - Operates 24/7 autonomously — catching real production events overnight without intervention
-- Escalates critical alerts (score ≥ 50 or blacklisted IPs) via Ntfy push notification — bypasses Do Not Disturb for urgent threats
+- Escalates critical alerts via push notification — bypasses Do Not Disturb for urgent threats
 
 ---
 
@@ -58,7 +86,7 @@ Ntopng Alerts ───┘
 - **Ntopng** — real-time network flow analysis with active threat intelligence feeds (Abuse.ch, Emerging Threats, IPsum)
 - **VoidWatch Bot** — Telegram bot for Ntopng network alerts
 - **Luna AI** — Claude-powered alert triage and SOC analysis
-- **AdGuard Home** — DNS-level filtering across the entire network
+- **AdGuard Home** — DNS-level filtering across the entire network (dual instance for redundancy)
 - **Cloudflare WAF** — edge protection for all public-facing services
 - **Uptime Kuma** — service availability monitoring with instant alerting
 
@@ -66,11 +94,12 @@ Ntopng Alerts ───┘
 
 ## 🎯 Currently Working On
 
-- ☸️ K3s cluster deployment for hands-on Kubernetes practice
+- ☸️ K3s cluster — adding Falco runtime security monitoring
+- 🛡️ Guardian — custom container image update manager (Watchtower replacement)
 - 📜 Terraform Associate (004) certification
 - ☁️ AWS Cloud Practitioner certification
-- 🔒 Expanding Luna AI capabilities across additional alert sources
-- 📦 Immich migration to vDSM for self-hosted family photo management
+- 🔒 CompTIA Security+
+- 📦 Immich migration to vDSM for self-hosted photo management
 
 ---
 
@@ -78,8 +107,9 @@ Ntopng Alerts ───┘
 
 - HashiCorp Terraform Associate
 - Certified Kubernetes Administrator (CKA)
-- GitHub Actions
 - AWS Cloud Practitioner
+- CompTIA Security+
+- GitHub Actions
 
 ---
 
@@ -97,8 +127,8 @@ Ntopng Alerts ───┘
 
 ## 🧰 Tech Stack
 
-`Docker` `Portainer` `Cloudflare` `Wazuh` `N8N` `Ntopng` `AdGuard Home` `Synology DSM` `Proxmox` `Ghost CMS` `Fedora Linux` `Bash` `YAML` `Git` `Terraform` `Kubernetes`
+`Docker` `Kubernetes (K3s)` `Portainer` `ArgoCD` `Helm` `Prometheus` `Grafana` `Cloudflare` `Wazuh` `N8N` `Ntopng` `AdGuard Home` `Synology DSM` `Proxmox` `Ghost CMS` `Fedora Linux` `Bash` `YAML` `Git` `Terraform` `Traefik`
 
 ---
 
-*Building in public. Breaking things on purpose.*
+*Building in public. Breaking things on purpose. Documenting everything.*
