@@ -31,7 +31,7 @@ All external access via Cloudflare Tunnels — zero open inbound ports.
 | [K3s Cluster](https://github.com/Scavenger503/HomeLab/tree/main/K3s) | GitOps-managed Kubernetes cluster with Prometheus/Grafana monitoring | ✅ Live |
 | [Wazuh AI Security Pipeline](https://github.com/Scavenger503/HomeLab/tree/main/Phase-2) | Automated SIEM alerting — Wazuh → N8N → Luna AI → Telegram | ✅ Live |
 | [NTOPNG-Alerts](https://github.com/Scavenger503/NTOPNG-Alerts) | Network threat detection — Ntopng → N8N → Luna AI → Telegram | ✅ Live |
-| 🛡️ [Guardian](https://github.com/Scavenger503/Guardian) | ✅ Live | A lightweight Docker container update watcher written in Go. Built as a self-hosted replacement for the now-archived Watchtower. Monitors labeled containers, compares SHA digests, and automatically pulls and restarts updated images — with Telegram notifications at every step.
+| 🛡️ [Guardian](https://github.com/Scavenger503/Guardian) | A lightweight Docker container update watcher written in Go. Built as a self-hosted replacement for the now-archived Watchtower. Monitors labeled containers, compares SHA digests, and automatically pulls and restarts updated images — with Telegram notifications at every step | ✅ Live |
 
 - Published on [Docker Hub](https://hub.docker.com/r/scavenger503/guardian) and GHCR
 - CI/CD via GitHub Actions
